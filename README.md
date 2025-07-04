@@ -1,4 +1,4 @@
-# 🧠 Personalized News Headline Summarizer with Emotion Detection
+# 🧠 Personalized News Article Summarizer with Emotion Detection
 
 This project uses NLP and deep learning to generate short, meaningful summaries from full-length news articles. It also detects the emotional tone of the summaries, enabling personalized news delivery based on emotion.
 
@@ -36,6 +36,45 @@ This project uses NLP and deep learning to generate short, meaningful summaries 
 | `2_summarization_finetune.ipynb` | Fine-tunes T5 model on article → summary |
 | `3_model_inference_evaluation.ipynb` | Generates summaries and evaluates with ROUGE |
 | `4_gradio_interface.ipynb` | Gradio UI for live user interaction |
+
+---
+
+## 🧠 Fine-Tuned T5 Summarizer Model
+
+The model used for this project is a fine-tuned version of `t5-small` from Hugging Face.
+
+### 🔹 Base Model:
+- `t5-small` — a lightweight transformer pre-trained on text-to-text tasks
+
+### 🔹 Fine-tuning Details:
+- Trained on ~98,000 news articles
+- Task: Summarize full `article` into short `headline/summary`
+- Training Parameters:
+  - Max input length: 512 tokens
+  - Max target length: 64 tokens
+  - 2–3 epochs (Colab-friendly)
+  - ROUGE used for evaluation
+- Training performed using the Hugging Face `Trainer` API
+
+### 📂 Model Files:
+Saved under [`/model/t5_my_summarizer_model/`](model/t5_my_summarizer_model/) directory in this repo. It includes:
+- `pytorch_model.bin`
+- `config.json`
+- `tokenizer_config.json`
+- `spiece.model`
+- `special_tokens_map.json`
+
+This model can be reloaded directly using Hugging Face Transformers for inference or further training.
+
+---
+
+---
+
+## 🖥️ Gradio Interface Demo
+
+Below is a screenshot of the interactive UI built using [Gradio](https://www.gradio.app/), which allows users to input a news article and instantly view the generated summary:
+
+![gradio_interface](https://github.com/user-attachments/assets/57c5b5ca-1912-4acf-b877-af6cc3c85a91)
 
 ---
 
