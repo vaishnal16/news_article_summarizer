@@ -57,7 +57,7 @@ The model used for this project is a fine-tuned version of `t5-small` from Huggi
 - Training performed using the Hugging Face `Trainer` API
 
 ### 📂 Model Files:
-Saved under [`/model/t5_my_summarizer_model/`](model/t5_my_summarizer_model/) directory in this repo. It includes:
+Saved under [`/model/t5_my_summarizer_model/`](https://github.com/vaishnal16/news_article_summarizer/tree/main/model/t5_summarizer_model) directory in this repo. It includes:
 - `pytorch_model.bin`
 - `config.json`
 - `tokenizer_config.json`
